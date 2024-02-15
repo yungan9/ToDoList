@@ -11,6 +11,8 @@ function App() {
       <div className="h-screen flex items-center justify-center">
         <div className="w-3/4 h-2/3 flex bg-white	rounded-lg">
           <div className="w-2/5 h-full shadow-md">
+            input
+            <br />
             남은 과제 수 500개
             <br />
             할일을 추가하새요
@@ -18,6 +20,8 @@ function App() {
           </div>
           <div className="w-3/5 h-full shadow-md">
             값을 줘요,.. output
+            <Item></Item>
+            <Item></Item>
             <Item></Item>
           </div>
         </div>
