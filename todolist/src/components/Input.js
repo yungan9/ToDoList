@@ -26,6 +26,7 @@ function Input() {
         placeholder="enter"
         value={text}
         onChange={onChangeInput}
+        ref={inputRef}
       />
       <button
         type="submit"
