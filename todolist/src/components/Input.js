@@ -33,7 +33,7 @@ function Input({ list, setList }) {
       <input
         className="h-10 w-4/5 outline-none"
         type="text"
-        name="todo"
+        name="item"
         placeholder="enter"
         value={text}
         onChange={onChangeInput}

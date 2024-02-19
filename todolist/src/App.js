@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import Input from "./components/Input";
-import Item from "./components/Item";
 import Header from "./components/Header";
+import ShowList from "./components/ShowList";
 
 function App() {
   const [list, setList] = useState([]);
@@ -22,7 +22,7 @@ function App() {
           </div>
           <div className="w-3/5 h-full ">
             값을 줘요,.. output
-            <Item list={list} setList={setList} />
+            <ShowList list={list} setList={setList} />
           </div>
         </div>
       </div>
