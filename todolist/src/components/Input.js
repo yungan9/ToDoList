@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useRef } from "react";
+import PropTypes from "prop-types";
 
-function Input() {
+function Input({ list, setList }) {
   const [text, setText] = useState("");
   const inputRef = useRef(null);
 
@@ -10,9 +11,19 @@ function Input() {
   };
 
   const onClickAddButton = () => {
+    const addlist = list.concat({
+      id: list.length,
+      text,
+    });
+    setList(addlist);
+
     inputRef.current.focus();
     setText("");
   };
+
+  useEffect(() => {
+    console.log(list);
+  }, [list]);
 
   return (
     <div
@@ -30,7 +41,7 @@ function Input() {
       />
       <button
         type="submit"
-        className="h-10 w-1/5 ml-4 rounded-lg bg-rose-200"
+        className="h-10 w-1/5 ml-4 rounded-lg bg-orange-800/20"
         onClick={onClickAddButton}
       >
         Add
@@ -38,5 +49,15 @@ function Input() {
     </div>
   );
 }
+
+Input.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+    }).isRequired
+  ),
+  setList: PropTypes.func.isRequired,
+};
 
 export default Input;
