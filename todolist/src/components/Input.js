@@ -14,6 +14,7 @@ function Input({ list, setList }) {
     const addlist = list.concat({
       id: list.length,
       text,
+      delete: false,
     });
     setList(addlist);
 
@@ -28,23 +29,23 @@ function Input({ list, setList }) {
   return (
     <div
       className="flex items-center justify-between
-    border-solid border-2 rounded-lg m-3 p-1"
+    border-solid border-2 rounded-full m-3 mt-10 p-1"
     >
       <input
-        className="h-10 w-4/5 outline-none"
+        className="h-10 w-4/5 ml-3 outline-none "
         type="text"
         name="item"
-        placeholder="enter"
+        placeholder="enter your todo"
         value={text}
         onChange={onChangeInput}
         ref={inputRef}
       />
       <button
         type="submit"
-        className="h-10 w-1/5 ml-4 rounded-lg bg-orange-800/20"
+        className="h-10 w-1/5 ml-4 rounded-full bg-orange-800/20"
         onClick={onClickAddButton}
       >
-        Add
+        ADD
       </button>
     </div>
   );

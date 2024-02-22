@@ -6,7 +6,7 @@ function ShowList(props) {
   const { list, setList } = props;
 
   return (
-    <div>
+    <div> 
       <ul>
         {list &&
           list.map((item) => (

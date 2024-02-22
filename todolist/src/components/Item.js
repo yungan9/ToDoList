@@ -2,16 +2,27 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Item({ item, list, setList }) {
+
+//   const onClickDelete =()=>{}
+//     const  addlist = list.map((item)) =>({
+//       ...item,
+//       deleted: item.id === todo
+//     })
+// };
+
   return (
     <li>
       <div
-        className="flex items-center m-5 p-2
-    border-solid border-2 rounded-lg border-neutral-400"
+        className="flex items-center m-5 p-2 bg-white
+        rounded-lg shadow-md"
       >
-        <input type="checkbox" className="  ml-2" />
-        <span className="ml-4	">{item.text}</span>
-        <button className="">수정</button>
-        <button className="ml-3">X</button>
+        <input type="checkbox" 
+        className="ml-2 " />
+        <span className="grow ml-4	">{item.text}</span>
+        <div className="flex flex-row-reverse"> 
+        <button className="p-1 ">⊗</button>
+        
+        </div>
       </div>
     </li>
   );
