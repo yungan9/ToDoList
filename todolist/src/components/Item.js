@@ -1,14 +1,24 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { object } from "prop-types";
 
 function Item({ item, list, setList }) {
+  const onChangeCheckbox = () => {
+    const complete = list.map((object) =>({
+      ...object,
+      checked: object.id === item.id ? !object.checked : object.checked,
+    }));
+
+    setList(complete);
+  };
 
 //   const onClickDelete =()=>{}
-//     const  addlist = list.map((item)) =>({
+//     const  addlist = list.map((object) =>({
 //       ...item,
-//       deleted: item.id === todo
+//       deleted: object.id === item.id ? true : object.deleted,
 //     })
-// };
+
+//     setList()
+// );};
 
   return (
     <li>
@@ -16,9 +26,16 @@ function Item({ item, list, setList }) {
         className="flex items-center m-5 p-2 bg-white
         rounded-lg shadow-md"
       >
-        <input type="checkbox" 
-        className="ml-2 " />
-        <span className="grow ml-4	">{item.text}</span>
+        <input 
+        type="checkbox" 
+        className=" ml-2 "
+        checked = {item.checked}
+        onChange={onChangeCheckbox} />
+
+        <span 
+        className={`grow ml-4 check ${item.checked ? 'check-checked' : ''}`}
+        >
+          {item.text}</span>
         <div className="flex flex-row-reverse"> 
         <button className="p-1 ">⊗</button>
         

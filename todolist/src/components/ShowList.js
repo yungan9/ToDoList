@@ -10,7 +10,11 @@ function ShowList(props) {
       <ul>
         {list &&
           list.map((item) => (
-            <Item key={item.id} item={item} list={list} setList={setList} />
+            <Item 
+            key={item.id} 
+            item={item} 
+            list={list} 
+            setList={setList} />
           ))}
       </ul>
     </div>

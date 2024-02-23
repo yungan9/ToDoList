@@ -6,19 +6,20 @@ function Input({ list, setList }) {
   const [text, setText] = useState("");
   const inputRef = useRef(null);
 
-  const onChangeInput = (e) => {
+  const onChangeInput = (e) => { //input값 받기
     setText(e.target.value);
   };
 
-  const onClickAddButton = () => {
-    const addlist = list.concat({
+  const onClickAddButton = () => { //add버튼 클릭시
+    const addlist = list.concat({ //list에 값 추가
       id: list.length,
       text,
+      checked: false,
       delete: false,
     });
     setList(addlist);
 
-    inputRef.current.focus();
+    inputRef.current.focus(); //input 포커싱
     setText("");
   };
 
@@ -51,7 +52,7 @@ function Input({ list, setList }) {
   );
 }
 
-Input.propTypes = {
+Input.propTypes = { //props
   list: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
