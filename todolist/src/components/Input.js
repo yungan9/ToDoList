@@ -15,7 +15,7 @@ function Input({ list, setList }) {
       id: list.length,
       text,
       checked: false,
-      delete: false,
+      deleted: false,
     });
     setList(addlist);
 

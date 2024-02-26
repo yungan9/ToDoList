@@ -11,14 +11,14 @@ function Item({ item, list, setList }) {
     setList(complete);
   };
 
-//   const onClickDelete =()=>{}
-//     const  addlist = list.map((object) =>({
-//       ...item,
-//       deleted: object.id === item.id ? true : object.deleted,
-//     })
+  const onClickDelete =()=>{
+    const  deletelist = list.map((object) =>({
+      ...object,
+      deleted: object.id === item.id ? true : object.deleted,
+    }));
 
-//     setList()
-// );};
+    setList(deletelist);
+  };
 
   return (
     <li>
@@ -37,7 +37,8 @@ function Item({ item, list, setList }) {
         >
           {item.text}</span>
         <div className="flex flex-row-reverse"> 
-        <button className="p-1 ">⊗</button>
+        <button className="p-1"
+        onClick={onClickDelete}>⊗</button>
         
         </div>
       </div>

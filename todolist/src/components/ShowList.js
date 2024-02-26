@@ -9,13 +9,16 @@ function ShowList(props) {
     <div> 
       <ul>
         {list &&
-          list.map((item) => (
+          list.map((item) => {
+            if(item.deleted) return null;
+
+            return(
             <Item 
             key={item.id} 
             item={item} 
             list={list} 
-            setList={setList} />
-          ))}
+            setList={setList} />);
+})}
       </ul>
     </div>
   );

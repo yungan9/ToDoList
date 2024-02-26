@@ -3,7 +3,6 @@ import { useState } from "react";
 import Input from "./components/Input";
 import Header from "./components/Header";
 import ShowList from "./components/ShowList";
-import Calender from "react-calendar";
 
 function App() {
   const [list, setList] = useState([]);
